@@ -1,0 +1,15 @@
+/dts-v1/;
+/plugin/;
+/ {
+        compatible = "brcm,bcm2835";
+        fragment@0 {
+                target = <&uart0>;
+                __overlay__ {
+                        ademco_panel {
+                                compatible = "ademco_panel";
+                                status = "okay";
+                                panel-gpio = <&gpio 4 0>; 
+                        };
+                };
+        };
+};

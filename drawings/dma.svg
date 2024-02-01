@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="dma.svg"
+   inkscape:export-filename="dma.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="0.53669881"
+     inkscape:cx="-137.87994"
+     inkscape:cy="630.70757"
+     inkscape:window-width="1920"
+     inkscape:window-height="1036"
+     inkscape:window-x="-3"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5">
+    <inkscape:grid
+       type="xygrid"
+       id="grid132" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker22803"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path22801"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker22360"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path22358"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2-4"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2-1"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0-0-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2-4-7"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0-7-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2-1-2"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0-0-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2-4-9"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0-7-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2-1-3"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-3"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-4-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-3-8"
+         transform="scale(-0.5)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1L-7-0-7-6-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="arrow1L-9-2-1-3-6"
+         transform="scale(-0.5)" />
+    </marker>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 2"
+     style="display:inline">
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect25619"
+       width="227.54166"
+       height="317.5"
+       x="-10.583333"
+       y="-10.583333" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <g
+       id="g11526"
+       transform="translate(-5.2916667,-25.664586)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236"
+         width="51.603916"
+         height="13.144753"
+         x="15.869918"
+         y="55.608135" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="22.408276"
+         y="60.774242"
+         id="text4584"><tspan
+           sodipodi:role="line"
+           id="tspan4582"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="22.408276"
+           y="60.774242">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="22.332483"
+         y="67.388824"
+         id="text4640"><tspan
+           sodipodi:role="line"
+           id="tspan4638"
+           style="stroke-width:0.257"
+           x="22.332483"
+           y="67.388824">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="46.302082"
+         y="59.728313"
+         id="text6876"><tspan
+           sodipodi:role="line"
+           id="tspan6874"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="46.302082"
+           y="59.728313">DUMMY DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="46.369606"
+         y="66.361504"
+         id="text6880"><tspan
+           sodipodi:role="line"
+           id="tspan6878"
+           style="stroke-width:0.257"
+           x="46.369606"
+           y="66.361504">PWM FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 15.875,62.177083 H 67.468749"
+         id="path6940" />
+    </g>
+    <rect
+       style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+       id="rect236-22"
+       width="51.603916"
+       height="13.144753"
+       x="77.385544"
+       y="75.980988" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="83.923904"
+       y="81.147118"
+       id="text4584-8"><tspan
+         sodipodi:role="line"
+         id="tspan4582-9"
+         style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+         x="83.923904"
+         y="81.147118">SRC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="83.848106"
+       y="87.761688"
+       id="text4640-7"><tspan
+         sodipodi:role="line"
+         id="tspan4638-361"
+         style="stroke-width:0.257"
+         x="83.848106"
+         y="87.761688">DST</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="107.81771"
+       y="86.715775"
+       id="text6876-2"><tspan
+         sodipodi:role="line"
+         id="tspan6874-9"
+         style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+         x="107.81771"
+         y="86.715775">DUMMY DATA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="107.88522"
+       y="80.119781"
+       id="text6880-3"><tspan
+         sodipodi:role="line"
+         id="tspan6878-19"
+         style="stroke-width:0.257"
+         x="107.88522"
+         y="80.119781">SPI FIFO</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 77.390625,82.550059 H 128.98437"
+       id="path6940-4" />
+    <g
+       id="g11538"
+       transform="translate(-5.9480362,-24.345102)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-3"
+         width="51.603916"
+         height="13.144753"
+         x="85.323036"
+         y="54.285221" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="91.861397"
+         y="59.451328"
+         id="text4584-6"><tspan
+           sodipodi:role="line"
+           id="tspan4582-7"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="91.861397"
+           y="59.451328">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="91.785606"
+         y="66.06591"
+         id="text4640-5"><tspan
+           sodipodi:role="line"
+           id="tspan4638-3"
+           style="stroke-width:0.257"
+           x="91.785606"
+           y="66.06591">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="115.79723"
+         y="58.405399"
+         id="text6876-5"><tspan
+           sodipodi:role="line"
+           id="tspan6874-6"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="115.79723"
+           y="58.405399">SPI DLEN VALUE</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="115.82272"
+         y="65.038589"
+         id="text6880-2"><tspan
+           sodipodi:role="line"
+           id="tspan6878-9"
+           style="stroke-width:0.257"
+           x="115.82272"
+           y="65.038589">SPI DLEN REG</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 85.328123,60.854167 H 136.92188"
+         id="path6940-1" />
+    </g>
+    <g
+       id="g11550"
+       transform="translate(60.854167,-45.508333)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-2"
+         width="51.603916"
+         height="13.144753"
+         x="87.307419"
+         y="75.451881" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="93.845779"
+         y="80.617989"
+         id="text4584-7"><tspan
+           sodipodi:role="line"
+           id="tspan4582-0"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="93.845779"
+           y="80.617989">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="93.769981"
+         y="87.232574"
+         id="text4640-9"><tspan
+           sodipodi:role="line"
+           id="tspan4638-36"
+           style="stroke-width:0.257"
+           x="93.769981"
+           y="87.232574">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="117.73958"
+         y="79.57206"
+         id="text6876-0"><tspan
+           sodipodi:role="line"
+           id="tspan6874-62"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="117.73958"
+           y="79.57206">SPI CS VALUE</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="117.76508"
+         y="86.205254"
+         id="text6880-6"><tspan
+           sodipodi:role="line"
+           id="tspan6878-1"
+           style="stroke-width:0.257"
+           x="117.76508"
+           y="86.205254">SPI CS REG</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 87.3125,82.020832 h 51.59375"
+         id="path6940-8" />
+    </g>
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.476669;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7)"
+       d="m 131.10188,36.512501 h 13.94711 v 0 0"
+       id="path11604-2" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.476672;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0)"
+       d="m 62.314667,36.512501 h 13.947216 v 0 0"
+       id="path11604-2-3" />
+    <g
+       id="g15899"
+       transform="translate(0,-29.104172)">
+      <g
+         id="g15604"
+         transform="translate(0.03721552,-0.53740667)">
+        <rect
+           style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+           id="rect236-22-5"
+           width="51.603916"
+           height="13.144753"
+           x="10.541036"
+           y="163.3018" />
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.079395"
+           y="168.46791"
+           id="text4584-8-0"><tspan
+             sodipodi:role="line"
+             id="tspan4582-9-3"
+             style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+             x="17.079395"
+             y="168.46791">SRC</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.003597"
+           y="175.08249"
+           id="text4640-7-6"><tspan
+             sodipodi:role="line"
+             id="tspan4638-361-1"
+             style="stroke-width:0.257"
+             x="17.003597"
+             y="175.08249">DST</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="40.927708"
+           y="167.422"
+           id="text6876-2-0"><tspan
+             sodipodi:role="line"
+             id="tspan6874-9-6"
+             style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+             x="40.927708"
+             y="167.422">PULSE DATA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="41.086201"
+           y="174.05518"
+           id="text6880-3-3"><tspan
+             sodipodi:role="line"
+             id="tspan6878-19-2"
+             style="stroke-width:0.257"
+             x="41.086201"
+             y="174.05518">SPI FIFO</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 10.546116,169.87074 h 51.59374"
+           id="path6940-4-0" />
+      </g>
+      <g
+         id="g15604-0"
+         transform="translate(69.159613,-0.53740667)">
+        <rect
+           style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+           id="rect236-22-5-7"
+           width="51.603916"
+           height="13.144753"
+           x="10.541036"
+           y="163.3018" />
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.079395"
+           y="168.46791"
+           id="text4584-8-0-8"><tspan
+             sodipodi:role="line"
+             id="tspan4582-9-3-6"
+             style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+             x="17.079395"
+             y="168.46791">SRC</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.003597"
+           y="175.08249"
+           id="text4640-7-6-8"><tspan
+             sodipodi:role="line"
+             id="tspan4638-361-1-8"
+             style="stroke-width:0.257"
+             x="17.003597"
+             y="175.08249">DST</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="40.927708"
+           y="167.422"
+           id="text6876-2-0-4"><tspan
+             sodipodi:role="line"
+             id="tspan6874-9-6-3"
+             style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+             x="40.927708"
+             y="167.422">PULSE DATA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="41.086201"
+           y="174.05518"
+           id="text6880-3-3-1"><tspan
+             sodipodi:role="line"
+             id="tspan6878-19-2-4"
+             style="stroke-width:0.257"
+             x="41.086201"
+             y="174.05518">SPI FIFO</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 10.546116,169.87074 h 51.59374"
+           id="path6940-4-0-9" />
+      </g>
+      <g
+         id="g15604-2"
+         transform="translate(138.28201,-0.53740667)">
+        <rect
+           style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+           id="rect236-22-5-0"
+           width="51.603916"
+           height="13.144753"
+           x="10.541036"
+           y="163.3018" />
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.079395"
+           y="168.46791"
+           id="text4584-8-0-6"><tspan
+             sodipodi:role="line"
+             id="tspan4582-9-3-8"
+             style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+             x="17.079395"
+             y="168.46791">SRC</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.003597"
+           y="175.08249"
+           id="text4640-7-6-9"><tspan
+             sodipodi:role="line"
+             id="tspan4638-361-1-2"
+             style="stroke-width:0.257"
+             x="17.003597"
+             y="175.08249">DST</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="40.927708"
+           y="167.422"
+           id="text6876-2-0-6"><tspan
+             sodipodi:role="line"
+             id="tspan6874-9-6-6"
+             style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+             x="40.927708"
+             y="167.422">PULSE DATA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="41.086201"
+           y="174.05518"
+           id="text6880-3-3-4"><tspan
+             sodipodi:role="line"
+             id="tspan6878-19-2-9"
+             style="stroke-width:0.257"
+             x="41.086201"
+             y="174.05518">SPI FIFO</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 10.546116,169.87074 h 51.59374"
+           id="path6940-4-0-5" />
+      </g>
+      <path
+         style="fill:none;stroke:#ff2a2a;stroke-width:0.478277;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-0)"
+         d="m 62.336645,169.33333 h 14.041328 v 0 0"
+         id="path11604-2-3-8" />
+      <path
+         style="fill:none;stroke:#ff2a2a;stroke-width:0.482754;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-7)"
+         d="m 131.49792,169.33333 h 14.30541 v 0 0"
+         id="path11604-2-3-7" />
+    </g>
+    <g
+       id="g15899-6"
+       transform="translate(0.33073433)">
+      <g
+         id="g15604-1"
+         transform="translate(0.03721552,-0.53740667)">
+        <rect
+           style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+           id="rect236-22-5-06"
+           width="51.603916"
+           height="13.144753"
+           x="10.541036"
+           y="163.3018" />
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.079395"
+           y="168.46791"
+           id="text4584-8-0-1"><tspan
+             sodipodi:role="line"
+             id="tspan4582-9-3-5"
+             style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+             x="17.079395"
+             y="168.46791">SRC</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.003597"
+           y="175.08249"
+           id="text4640-7-6-94"><tspan
+             sodipodi:role="line"
+             id="tspan4638-361-1-9"
+             style="stroke-width:0.257"
+             x="17.003597"
+             y="175.08249">DST</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="40.927708"
+           y="167.422"
+           id="text6876-2-0-0"><tspan
+             sodipodi:role="line"
+             id="tspan6874-9-6-9"
+             style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+             x="40.927708"
+             y="167.422">PULSE DATA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="41.086201"
+           y="174.05518"
+           id="text6880-3-3-17"><tspan
+             sodipodi:role="line"
+             id="tspan6878-19-2-7"
+             style="stroke-width:0.257"
+             x="41.086201"
+             y="174.05518">SPI FIFO</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 10.546116,169.87074 h 51.59374"
+           id="path6940-4-0-1" />
+      </g>
+      <g
+         id="g15604-0-1"
+         transform="translate(69.159613,-0.53740667)">
+        <rect
+           style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+           id="rect236-22-5-7-5"
+           width="51.603916"
+           height="13.144753"
+           x="10.541036"
+           y="163.3018" />
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.079395"
+           y="168.46791"
+           id="text4584-8-0-8-9"><tspan
+             sodipodi:role="line"
+             id="tspan4582-9-3-6-7"
+             style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+             x="17.079395"
+             y="168.46791">SRC</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.003597"
+           y="175.08249"
+           id="text4640-7-6-8-7"><tspan
+             sodipodi:role="line"
+             id="tspan4638-361-1-8-6"
+             style="stroke-width:0.257"
+             x="17.003597"
+             y="175.08249">DST</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="40.927708"
+           y="167.422"
+           id="text6876-2-0-4-7"><tspan
+             sodipodi:role="line"
+             id="tspan6874-9-6-3-3"
+             style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+             x="40.927708"
+             y="167.422">PULSE DATA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="41.086201"
+           y="174.05518"
+           id="text6880-3-3-1-6"><tspan
+             sodipodi:role="line"
+             id="tspan6878-19-2-4-5"
+             style="stroke-width:0.257"
+             x="41.086201"
+             y="174.05518">SPI FIFO</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 10.546116,169.87074 h 51.59374"
+           id="path6940-4-0-9-6" />
+      </g>
+      <g
+         id="g15604-2-3"
+         transform="translate(138.28201,-0.53740667)">
+        <rect
+           style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+           id="rect236-22-5-0-9"
+           width="51.603916"
+           height="13.144753"
+           x="10.541036"
+           y="163.3018" />
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.079395"
+           y="168.46791"
+           id="text4584-8-0-6-4"><tspan
+             sodipodi:role="line"
+             id="tspan4582-9-3-8-8"
+             style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+             x="17.079395"
+             y="168.46791">SRC</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="17.003597"
+           y="175.08249"
+           id="text4640-7-6-9-1"><tspan
+             sodipodi:role="line"
+             id="tspan4638-361-1-2-2"
+             style="stroke-width:0.257"
+             x="17.003597"
+             y="175.08249">DST</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="40.927708"
+           y="167.422"
+           id="text6876-2-0-6-9"><tspan
+             sodipodi:role="line"
+             id="tspan6874-9-6-6-3"
+             style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+             x="40.927708"
+             y="167.422">PULSE DATA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+           x="41.086201"
+           y="174.05518"
+           id="text6880-3-3-4-9"><tspan
+             sodipodi:role="line"
+             id="tspan6878-19-2-9-0"
+             style="stroke-width:0.257"
+             x="41.086201"
+             y="174.05518">SPI FIFO</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 10.546116,169.87074 h 51.59374"
+           id="path6940-4-0-5-8" />
+      </g>
+      <path
+         style="fill:none;stroke:#ff2a2a;stroke-width:0.478277;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-0-2)"
+         d="m 62.336645,169.33333 h 14.041328 v 0 0"
+         id="path11604-2-3-8-8" />
+      <path
+         style="fill:none;stroke:#ff2a2a;stroke-width:0.482754;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-7-2)"
+         d="m 131.49792,169.33333 h 14.30541 v 0 0"
+         id="path11604-2-3-7-5" />
+    </g>
+    <g
+       id="g15604-5"
+       transform="translate(0.36794985,28.566754)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-22-5-6"
+         width="51.603916"
+         height="13.144753"
+         x="10.541036"
+         y="163.3018" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.079395"
+         y="168.46791"
+         id="text4584-8-0-11"><tspan
+           sodipodi:role="line"
+           id="tspan4582-9-3-59"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="17.079395"
+           y="168.46791">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.003597"
+         y="175.08249"
+         id="text4640-7-6-84"><tspan
+           sodipodi:role="line"
+           id="tspan4638-361-1-81"
+           style="stroke-width:0.257"
+           x="17.003597"
+           y="175.08249">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="40.927708"
+         y="167.422"
+         id="text6876-2-0-03"><tspan
+           sodipodi:role="line"
+           id="tspan6874-9-6-0"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="40.927708"
+           y="167.422">PULSE DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="41.086201"
+         y="174.05518"
+         id="text6880-3-3-44"><tspan
+           sodipodi:role="line"
+           id="tspan6878-19-2-44"
+           style="stroke-width:0.257"
+           x="41.086201"
+           y="174.05518">SPI FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 10.546116,169.87074 h 51.59374"
+         id="path6940-4-0-7" />
+    </g>
+    <g
+       id="g15604-0-6"
+       transform="translate(69.490347,28.566754)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-22-5-7-3"
+         width="51.603916"
+         height="13.144753"
+         x="10.541036"
+         y="163.3018" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.079395"
+         y="168.46791"
+         id="text4584-8-0-8-1"><tspan
+           sodipodi:role="line"
+           id="tspan4582-9-3-6-75"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="17.079395"
+           y="168.46791">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.003597"
+         y="175.08249"
+         id="text4640-7-6-8-9"><tspan
+           sodipodi:role="line"
+           id="tspan4638-361-1-8-62"
+           style="stroke-width:0.257"
+           x="17.003597"
+           y="175.08249">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="40.927708"
+         y="167.422"
+         id="text6876-2-0-4-1"><tspan
+           sodipodi:role="line"
+           id="tspan6874-9-6-3-7"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="40.927708"
+           y="167.422">PULSE DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="41.086201"
+         y="174.05518"
+         id="text6880-3-3-1-8"><tspan
+           sodipodi:role="line"
+           id="tspan6878-19-2-4-57"
+           style="stroke-width:0.257"
+           x="41.086201"
+           y="174.05518">SPI FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 10.546116,169.87074 h 51.59374"
+         id="path6940-4-0-9-4" />
+    </g>
+    <g
+       id="g15604-2-1"
+       transform="translate(138.61274,28.566754)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-22-5-0-8"
+         width="51.603916"
+         height="13.144753"
+         x="10.541036"
+         y="163.3018" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.079395"
+         y="168.46791"
+         id="text4584-8-0-6-5"><tspan
+           sodipodi:role="line"
+           id="tspan4582-9-3-8-9"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="17.079395"
+           y="168.46791">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.003597"
+         y="175.08249"
+         id="text4640-7-6-9-7"><tspan
+           sodipodi:role="line"
+           id="tspan4638-361-1-2-5"
+           style="stroke-width:0.257"
+           x="17.003597"
+           y="175.08249">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="40.927708"
+         y="167.422"
+         id="text6876-2-0-6-3"><tspan
+           sodipodi:role="line"
+           id="tspan6874-9-6-6-8"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="40.927708"
+           y="167.422">PULSE DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="41.086201"
+         y="174.05518"
+         id="text6880-3-3-4-8"><tspan
+           sodipodi:role="line"
+           id="tspan6878-19-2-9-3"
+           style="stroke-width:0.257"
+           x="41.086201"
+           y="174.05518">SPI FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 10.546116,169.87074 h 51.59374"
+         id="path6940-4-0-5-1" />
+    </g>
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.478277;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-0-0)"
+       d="m 62.667379,198.43749 h 14.041328 v 0 0"
+       id="path11604-2-3-8-89" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.482754;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-7-6)"
+       d="m 131.82865,198.43749 h 14.30541 v 0 0"
+       id="path11604-2-3-7-6" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.482754;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-7-6-5)"
+       d="m 131.75354,271.19792 h 14.30541 v 0 0"
+       id="path11604-2-3-7-6-6" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.477;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7)"
+       d="m 199.76041,36.5125 h 5.29167 V 48.41875 H 2.6458333 V 36.512501 h 4.7625"
+       id="path12865"
+       sodipodi:nodetypes="cccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+       x="79.375"
+       y="60.854164"
+       id="text13314"><tspan
+         sodipodi:role="line"
+         id="tspan13312"
+         style="stroke:#000000;stroke-width:0.477"
+         x="79.375"
+         y="60.854164"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+       x="103.58713"
+       y="17.991632"
+       id="text13318"><tspan
+         sodipodi:role="line"
+         id="tspan13316"
+         style="font-size:5.64444px;fill:#000000;stroke:none;stroke-width:0.477"
+         x="103.58713"
+         y="17.991632">PWM DMA CHANNEL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+       x="103.1875"
+       y="69.320763"
+       id="text13318-7"><tspan
+         sodipodi:role="line"
+         id="tspan13316-5"
+         style="font-size:5.64444px;fill:#000000;stroke:none;stroke-width:0.477"
+         x="103.1875"
+         y="69.320763">SPI RECEIVE DMA CHANNEL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+       x="103.1875"
+       y="119.06255"
+       id="text13318-7-8"><tspan
+         sodipodi:role="line"
+         id="tspan13316-5-0"
+         style="font-size:5.64444px;fill:#000000;stroke:none;stroke-width:0.477"
+         x="103.1875"
+         y="119.06255">SPI TRANSMIT DMA CHANNEL</tspan></text>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.484944;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-7)"
+       d="m 129.2221,82.555979 h 5.47611 v 10.57035 H 70.353873 v -10.57035 h 4.107085"
+       id="path13729" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.477;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L)"
+       d="M 200.55417,169.33333 H 206.375 V 182.5625 H 2.6458333 v 15.875 h 5.2916666"
+       id="path16471"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.477;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-4)"
+       d="m 200.55417,198.4375 h 5.82083 v 13.22917 H 2.645833 v 15.875 H 7.9375"
+       id="path16471-3"
+       sodipodi:nodetypes="cccccc" />
+    <g
+       id="g15604-5-8"
+       transform="translate(0.36794765,57.670911)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-22-5-6-9"
+         width="51.603916"
+         height="13.144753"
+         x="10.541036"
+         y="163.3018" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.079395"
+         y="168.46791"
+         id="text4584-8-0-11-7"><tspan
+           sodipodi:role="line"
+           id="tspan4582-9-3-59-7"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="17.079395"
+           y="168.46791">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="17.003597"
+         y="175.08249"
+         id="text4640-7-6-84-6"><tspan
+           sodipodi:role="line"
+           id="tspan4638-361-1-81-4"
+           style="stroke-width:0.257"
+           x="17.003597"
+           y="175.08249">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="40.927708"
+         y="167.422"
+         id="text6876-2-0-03-3"><tspan
+           sodipodi:role="line"
+           id="tspan6874-9-6-0-0"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="40.927708"
+           y="167.422">PULSE DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="41.086201"
+         y="174.05518"
+         id="text6880-3-3-44-3"><tspan
+           sodipodi:role="line"
+           id="tspan6878-19-2-44-0"
+           style="stroke-width:0.257"
+           x="41.086201"
+           y="174.05518">SPI FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 10.546116,169.87074 h 51.59374"
+         id="path6940-4-0-7-9" />
+    </g>
+    <g
+       id="g17916"
+       transform="translate(-7.9374982,-26.458333)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-22-5-6-9-1"
+         width="51.603916"
+         height="13.144753"
+         x="87.96888"
+         y="247.43106" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="94.50724"
+         y="252.59717"
+         id="text4584-8-0-11-7-0"><tspan
+           sodipodi:role="line"
+           id="tspan4582-9-3-59-7-5"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="94.50724"
+           y="252.59717">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="94.431442"
+         y="259.21176"
+         id="text4640-7-6-84-6-1"><tspan
+           sodipodi:role="line"
+           id="tspan4638-361-1-81-4-1"
+           style="stroke-width:0.257"
+           x="94.431442"
+           y="259.21176">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="118.35555"
+         y="251.55125"
+         id="text6876-2-0-03-3-0"><tspan
+           sodipodi:role="line"
+           id="tspan6874-9-6-0-0-8"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="118.35555"
+           y="251.55125">PING DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="118.51405"
+         y="258.18445"
+         id="text6880-3-3-44-3-5"><tspan
+           sodipodi:role="line"
+           id="tspan6878-19-2-44-0-0"
+           style="stroke-width:0.257"
+           x="118.51405"
+           y="258.18445">SPI FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 87.973963,254 H 139.5677"
+         id="path6940-4-0-7-9-6" />
+    </g>
+    <g
+       id="g17928"
+       transform="translate(-7.9374982,-20.485819)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-22-5-6-9-1-6"
+         width="51.603916"
+         height="13.144753"
+         x="87.96888"
+         y="263.30606" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="94.50724"
+         y="268.47217"
+         id="text4584-8-0-11-7-0-2"><tspan
+           sodipodi:role="line"
+           id="tspan4582-9-3-59-7-5-5"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="94.50724"
+           y="268.47217">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="94.431442"
+         y="275.08676"
+         id="text4640-7-6-84-6-1-8"><tspan
+           sodipodi:role="line"
+           id="tspan4638-361-1-81-4-1-6"
+           style="stroke-width:0.257"
+           x="94.431442"
+           y="275.08676">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="118.35555"
+         y="267.42627"
+         id="text6876-2-0-03-3-0-2"><tspan
+           sodipodi:role="line"
+           id="tspan6874-9-6-0-0-8-8"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="118.35555"
+           y="267.42627">PONG DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="118.51405"
+         y="274.05945"
+         id="text6880-3-3-44-3-5-4"><tspan
+           sodipodi:role="line"
+           id="tspan6878-19-2-44-0-0-7"
+           style="stroke-width:0.257"
+           x="118.51405"
+           y="274.05945">SPI FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 87.973963,269.875 H 139.5677"
+         id="path6940-4-0-7-9-6-2" />
+    </g>
+    <g
+       id="g17940"
+       transform="translate(-7.9374982,-14.513306)">
+      <rect
+         style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+         id="rect236-22-5-6-9-1-62"
+         width="51.603916"
+         height="13.144753"
+         x="87.96888"
+         y="279.18106" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="94.50724"
+         y="284.34717"
+         id="text4584-8-0-11-7-0-9"><tspan
+           sodipodi:role="line"
+           id="tspan4582-9-3-59-7-5-9"
+           style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+           x="94.50724"
+           y="284.34717">SRC</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="94.431442"
+         y="290.96176"
+         id="text4640-7-6-84-6-1-0"><tspan
+           sodipodi:role="line"
+           id="tspan4638-361-1-81-4-1-8"
+           style="stroke-width:0.257"
+           x="94.431442"
+           y="290.96176">DST</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="118.35555"
+         y="283.30127"
+         id="text6876-2-0-03-3-0-1"><tspan
+           sodipodi:role="line"
+           id="tspan6874-9-6-0-0-8-3"
+           style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+           x="118.35555"
+           y="283.30127">ONCE DATA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+         x="118.51405"
+         y="289.93445"
+         id="text6880-3-3-44-3-5-1"><tspan
+           sodipodi:role="line"
+           id="tspan6878-19-2-44-0-0-1"
+           style="stroke-width:0.257"
+           x="118.51405"
+           y="289.93445">SPI FIFO</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 87.973963,285.75 H 139.5677"
+         id="path6940-4-0-7-9-6-0" />
+    </g>
+    <rect
+       style="fill:#00cfed;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+       id="rect236-22-5-6-9-1-62-4"
+       width="51.603916"
+       height="13.144753"
+       x="149.15378"
+       y="264.66776" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="155.69214"
+       y="269.83386"
+       id="text4584-8-0-11-7-0-9-0"><tspan
+         sodipodi:role="line"
+         id="tspan4582-9-3-59-7-5-9-3"
+         style="font-size:5.64444px;fill:#000000;stroke-width:0.257"
+         x="155.69214"
+         y="269.83386">SRC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="155.61635"
+       y="276.44846"
+       id="text4640-7-6-84-6-1-0-9"><tspan
+         sodipodi:role="line"
+         id="tspan4638-361-1-81-4-1-8-1"
+         style="stroke-width:0.257"
+         x="155.61635"
+         y="276.44846">DST</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="179.54045"
+       y="268.78796"
+       id="text6876-2-0-03-3-0-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan6874-9-6-0-0-8-3-6"
+         style="font-size:2.82222px;fill:#000000;stroke:none;stroke-width:0.257"
+         x="179.54045"
+         y="268.78796">LINK CB NEXT VALUE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.257;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0"
+       x="179.69896"
+       y="275.42114"
+       id="text6880-3-3-44-3-5-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan6878-19-2-44-0-0-1-3"
+         style="stroke-width:0.257"
+         x="179.69896"
+         y="275.42114">LINK CB NEXT</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 149.15886,271.23669 H 200.7526"
+       id="path6940-4-0-7-9-6-0-3" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.477;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-4-3)"
+       d="m 200.55417,140.22916 h 5.82083 v 13.22917 H 2.645833 v 15.875 H 7.9375"
+       id="path16471-3-0"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.452522;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 62.70625,227.54167 h 4.762499 v 43.65624"
+       id="path19630" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.432527;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:0.865054, 0.432527;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-0-0)"
+       d="m 67.468749,227.54166 h 9.789584"
+       id="path19632" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.433659;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:0.867318, 0.433659;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-0-0)"
+       d="m 67.352897,249.47627 h 9.840901"
+       id="path19634" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.432527;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:0.865054, 0.432527;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1L-7-0-0-0)"
+       d="m 67.468749,271.19791 h 9.789584"
+       id="path19636" />
+    <g
+       id="g22317"
+       transform="translate(2.8308446,-7.7159784)">
+      <rect
+         style="fill:#93ff93;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect20126"
+         width="15.875"
+         height="5.2916665"
+         x="164.18739"
+         y="232.61525" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:0.954, 0.476999;stroke-dashoffset:0"
+         x="171.97917"
+         y="236.80208"
+         id="text20068"><tspan
+           sodipodi:role="line"
+           id="tspan20066"
+           style="font-size:4.23333px;fill:#000000;stroke:none;stroke-width:0.477"
+           x="171.97917"
+           y="236.80208">START</tspan></text>
+    </g>
+    <g
+       id="g22317-4"
+       transform="translate(-153.60406,-110.90692)">
+      <rect
+         style="fill:#93ff93;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect20126-0"
+         width="15.875"
+         height="5.2916665"
+         x="164.18739"
+         y="232.61525" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:0.954, 0.476999;stroke-dashoffset:0"
+         x="171.97917"
+         y="236.80208"
+         id="text20068-0"><tspan
+           sodipodi:role="line"
+           id="tspan20066-4"
+           style="font-size:4.23333px;fill:#000000;stroke:none;stroke-width:0.477"
+           x="171.97917"
+           y="236.80208">START</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.396194;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker22360)"
+       d="m 10.583333,124.61875 -7.8650256,-0.0574 v 15.83918 h 5.4883604"
+       id="path22356"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.458287;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker22803)"
+       d="m 132.29166,227.54166 h 31.75001"
+       id="path22795" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.444373;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker22803)"
+       d="m 132.22149,249.99826 h 42.46984 V 232.8317"
+       id="path22797" />
+    <path
+       style="fill:none;stroke:#ff2a2a;stroke-width:0.435989;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker22803)"
+       d="m 200.74424,271.19792 h 4.30784 V 227.75377 H 185.6668"
+       id="path22799" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0"
+       x="36.653065"
+       y="240.24167"
+       id="text24171"><tspan
+         sodipodi:role="line"
+         id="tspan24169"
+         style="fill:#0000ff;stroke:none;stroke-width:0.477"
+         x="36.653065"
+         y="240.24167">LINK CB</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0"
+       x="105.77546"
+       y="240.24167"
+       id="text24171-6"><tspan
+         sodipodi:role="line"
+         id="tspan24169-2"
+         style="fill:#0000ff;stroke:none;stroke-width:0.477"
+         x="105.77546"
+         y="240.24167">PING CB</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0"
+       x="105.77546"
+       y="261.9375"
+       id="text24171-67"><tspan
+         sodipodi:role="line"
+         id="tspan24169-5"
+         style="fill:#0000ff;stroke:none;stroke-width:0.477"
+         x="105.77546"
+         y="261.9375">PONG CB</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.476999;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0"
+       x="105.86434"
+       y="283.10416"
+       id="text24171-69"><tspan
+         sodipodi:role="line"
+         id="tspan24169-8"
+         style="fill:#0000ff;stroke:none;stroke-width:0.477"
+         x="105.86434"
+         y="283.10416">ONCE CB</tspan></text>
+  </g>
+</svg>

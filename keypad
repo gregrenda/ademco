@@ -1,0 +1,673 @@
+#!/usr/bin/perl -- # -*-Perl-*-
+
+# MIT License
+#
+# Copyright (c) 2024 Greg Renda
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+use strict;
+use IO::Socket;
+use IO::Select;
+use Digest::SHA qw(sha1_base64);
+
+use constant HTTP_OK		=> "HTTP/1.0 200 OK\r\n";
+use constant WS_UUID		=> '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
+use constant WS_FIN		=> 1 << 7;
+use constant WS_MASK		=> 1 << 7;
+use constant WS_OP_TEXT		=> 1;
+
+use constant KEYS		=> { zero=>0, one=>1, two=>2, three=>3, four=>4,
+				     five=>5, six=>6, seven=>7, eight=>8,
+				     nine=>9, asterisk=>0xa, pound=>0xb,
+				     one_and_asterisk=>0xc,
+				     asterisk_and_pound=>0xd,
+				     three_and_pound=>0xe,
+				     a=>0x1c, b=>0x1d, c=>0x1e, d=>0x1f };
+
+use constant DISPLAY		=> { alarm=>1, away=>2, no=>3, bypass=>4,
+				     chime=>5, not_ready=>6, instant=>7,
+				     check=>9, fire=>13, bat=>14, stay=>15,
+				     night=>20, canceled=>21 };
+
+use constant INVERTED		=> (1 << DISPLAY->{no}) |
+				   (1 << DISPLAY->{not_ready});
+
+use constant TWO_TONES		=> 0;
+use constant THREE_SLOW_BEEPS	=> 8;
+use constant DISABLE_LOW_DIGIT	=> 10;
+use constant DISABLE_HIGH_DIGIT => 11;
+use constant READY_LED		=> 12;
+
+use constant BEEP_MASK		=> 0x00070000;
+use constant BEEP_SHIFT		=> 16;
+
+use constant AUDIO_MASK		=> BEEP_MASK | (1 << TWO_TONES) |
+				   (1 << THREE_SLOW_BEEPS);
+use constant BEEPS		=> { 1=>'one', 2=>'two', 3=>'three',
+				     7=>'continuous' };
+
+my ($keypadAd, $keypadType, $wsHost, $wsPort);
+
+$keypadType = 6150;
+
+while ($ARGV[0] =~ /^-/)
+{
+    for ($ARGV[0])
+    {
+	$_ eq '-ecp' && do
+	{
+	    shift;
+	    $keypadAd = shift;
+	    $keypadType = 6160;
+	    last;
+	};
+
+	$_ eq '-wshost' && do
+	{
+	    shift;
+	    $wsHost = shift;
+	    ($wsHost, $wsPort) = split /:/, $wsHost;
+	    last;
+	};
+
+	die "$0: Unrecognized option $_.\n";
+    }
+}
+
+my $keypadSvg = "drawings/keypad_$keypadType.svg";
+my $audioPath = "audio/$keypadType";
+
+my ($httpPort, $panelHostPort) = @ARGV;
+
+die "$0: [-ecp <keypad address (16-23)>] [-wshost <WebSocket host>[:port]] <http port> <panel host:port>\n" unless
+    $httpPort and $panelHostPort and (!defined $keypadAd or
+				      ($keypadAd >= 16 and $keypadAd <= 23));
+
+$wsPort = $httpPort + 1 unless $wsPort;
+my $httpServer = new IO::Socket::INET Listen=>1, LocalPort=>$httpPort,
+    Proto=>'tcp', Reuse => 1 or die;
+my $wsServer = new IO::Socket::INET Listen=>1, LocalPort=>$wsPort,
+    Proto=>'tcp', Reuse => 1 or die;
+my $panel = new IO::Socket::INET PeerAddr=>$panelHostPort, Proto=>'udp';
+
+my $sel = new IO::Select $httpServer, $wsServer, $panel;
+my $dataStart = tell DATA;
+my (%wsClients, $lastKeyTime, $lastKeyClient);
+
+while (1)
+{
+    if (time - $lastKeyTime >= 30)
+    {
+	$panel->write(chr(0xff));	# panel keepalive
+	$lastKeyTime = time;
+    }
+
+    for ($sel->can_read(30))
+    {
+	if ($_ eq $httpServer)		# http server connection
+	{
+	    my $httpClient = $httpServer->accept;
+	    my $path;
+	    my $oldFh = select $httpClient;
+
+	    while (<$httpClient>)
+	    {
+		s/[\r\n]$//g;
+		$path = (split /\s/)[1] if /^GET/;
+		last if /^$/;
+	    }
+
+	    if ($path eq '/')
+	    {
+		print HTTP_OK, "\r\n";
+		seek DATA, $dataStart, 0;
+
+		my $wsUrl = '"ws://'.($wsHost ? $wsHost :
+				       $httpClient->sockhost()).":$wsPort\"";
+
+		while (<DATA>)
+		{
+		    s/WS_URL/$wsUrl/;
+		    s/KEYPAD_SVG/$keypadSvg/;
+		    s/KEYPAD_TYPE/$keypadType/;
+		    print;
+		}
+	    }
+	    elsif ($path eq "/$keypadSvg")
+	    {
+		print HTTP_OK, "Content-type: image/svg+xml\r\n\r\n";
+		open my $file, $keypadSvg or die;
+		print <$file>;
+	    }
+	    elsif ($path =~ m%^/.+mp3%)
+	    {
+		print HTTP_OK, "Content-type: audio/mpeg\r\n\r\n";
+		$path =~ s%^/%$audioPath/%;
+		open my $file, $path or die "Can't open $path\n";
+		print <$file>;
+	    }
+	    else
+	    {
+		print "HTTP/1.0 404 Not Found\r\n\r\n";
+	    }
+
+	    select $oldFh;
+	    close $httpClient;
+	}
+	elsif ($_ eq $wsServer)		# WebSocket connection
+	{
+	    my $wsClient = $wsServer->accept;
+	    $sel->add($wsClient);
+
+	    my $key;
+
+	    while (<$wsClient>)
+	    {
+		s/[\r\n]$//g;
+		$key = (split /\s/)[1] if /^Sec-WebSocket-Key/;
+		last if /^$/;
+	    }
+
+	    my $reply = sha1_base64($key.WS_UUID).'=';
+
+	    print $wsClient <<END;
+HTTP/1.1 101 Switching Protocols\r
+Upgrade: websocket\r
+Connection: Upgrade\r
+Sec-WebSocket-Accept: $reply\r
+\r
+END
+	    my $c = $wsClients{$wsClient} = {};
+	    $c->{want} = 2;
+	    $c->{wsState} = 'header';
+	    $c->{sock} = $wsClient;
+
+	    $lastKeyClient = $c->{sock};
+	}
+	elsif ($_ eq $panel)		# data from panel
+	{
+	    my %data;
+
+	    if ($keypadType == 6150)
+	    {
+		$panel->recv(my $buf, 4);
+		$data{ctl} = unpack('N', $buf) ^ INVERTED;
+	    }
+	    else # keypad type == 6160
+	    {
+		$panel->recv(my $buf, 100);
+
+		# only care about messages from channel 0 - the panel
+		next unless length $buf >= 1 and !unpack('C', $buf);
+		substr($buf, 0, 1) = '';
+
+		if (length $buf == 45 and unpack('C', $buf) == 0xf7)
+		{
+		    @data{qw(type keypadMask ctl prompt line_1 line_2)} =
+			unpack 'CxxCxNxCxa16a16', $buf;
+
+		    $data{ctl} ^= INVERTED;
+
+		    if ((my $first = unpack('C', $data{line_1})) & 0x80)
+		    {
+			$data{backlight} = 1;
+			substr($data{line_1}, 0, 1) = pack 'C', ($first & 0x7f);
+		    }
+		}
+	    }
+
+	    last unless exists $data{ctl};
+
+	    for (keys %wsClients)
+	    {
+		my $c = $wsClients{$_};
+
+		# check for non-audio changes
+		if (($c->{ctl} & ~AUDIO_MASK) != ($data{ctl} & ~AUDIO_MASK))
+		{
+		    # ready LED
+		    my $state = $data{ctl} & (1 << READY_LED);
+
+		    sendClient($c, item=>'ready_led',
+			       color=>$state ? '#00ff00' : '#808080') if
+				   $state != ($c->{ctl} & (1 << READY_LED));
+
+		    # armed LED
+		    $state = $data{ctl} & ((1 << DISPLAY->{away}) |
+					   (1 << DISPLAY->{stay}));
+
+		    sendClient($c, item=>'armed_led',
+			       color=>$state ? '#ff0000' : '#808080') if
+				   $state != ($c->{ctl} &
+					      ((1 << DISPLAY->{away}) |
+					       (1 << DISPLAY->{stay})));
+
+		    if ($keypadType == 6150)
+		    {
+			for my $item (keys %{DISPLAY()})
+			{
+			    $state = $data{ctl} & (1 << DISPLAY->{$item});
+
+			    # disable NOT READY if any led is on or ALARM or
+			    # CHECK is on
+			    $state = 0 if $item eq 'not_ready' and
+				($c->{state}{ready_led} or
+				 $c->{state}{armed_led} or
+				 $data{ctl} & (1 << DISPLAY->{alarm}) or
+				 $data{ctl} & (1 << DISPLAY->{check}));
+
+			    sendClient($c, item=>$item, visible=>$state ? 1 : 0)
+				if $state !=
+				($c->{ctl} & (1 << DISPLAY->{$item}));
+			}
+
+			digit($c, $data{ctl} & (1 << DISABLE_LOW_DIGIT) ? 'off' :
+			      sprintf('%x', ($data{ctl} >> 24) & 0xf), 'low');
+			digit($c, $data{ctl} & (1 << DISABLE_HIGH_DIGIT) ?
+			      'off' : sprintf('%x', $data{ctl} >> 28), 'high');
+		    }
+		}
+
+		if ($keypadType == 6160)
+		{
+		    for (qw(line_1 line_2))
+		    {
+			if ($c->{$_} ne $data{$_})
+			{
+			    sendClient($c, item=>"message_$_", text=>$data{$_});
+			    $c->{$_} = $data{$_};
+			}
+		    }
+
+		    if ($c->{backlight} != $data{backlight})
+		    {
+			sendClient($c, item=>$data{backlight} ?
+				   'backlightOn' : 'backlightOff');
+			$c->{backlight} = $data{backlight};
+		    }
+
+		    if ($c->{prompt} != $data{prompt})
+		    {
+			my $p = (' ') x 32;
+
+			substr($p, $data{prompt}, 1) = '_' if $data{prompt};
+
+			sendClient($c, item=>'message_line_1_prompt',
+				   text=>substr($p, 0, 16));
+			sendClient($c, item=>'message_line_2_prompt',
+				   text=>substr($p, 16, 16));
+			$c->{prompt} = $data{prompt};
+		    }
+		}
+
+		# stop two tone looping
+		sendClient($c, audio=>'stop') if
+		    ($c->{ctl} & (1 << TWO_TONES)) &&
+		    !($data{ctl} & (1 << TWO_TONES));
+
+		my $beep = ($data{ctl} & BEEP_MASK) >> BEEP_SHIFT;
+		my $prevBeep = ($c->{ctl} & BEEP_MASK) >> BEEP_SHIFT;
+
+		if ($data{ctl} & (1 << THREE_SLOW_BEEPS))
+		{
+		    sendClient($c, audio=>'threeslow.mp3');
+		}
+		elsif ($data{ctl} & (1 << TWO_TONES))
+		{
+		    sendClient($c, audio=>'twotone.mp3', loop=>1);
+		}
+		elsif (!$beep and $prevBeep >= 4 and $prevBeep <= 6)
+		{
+		    sendClient($c, audio=>'stop');	# stop looping beeps
+		}
+		elsif ($beep >= 4 and $beep <= 6)
+		{
+		    sendClient($c, audio=>$beep == 4 ? 'fast.mp3' :
+			       'twoslow.mp3', loop=>1) if $beep != $prevBeep;
+		}
+		else # only send regular beeps to the client that was typing
+		{
+		    sendClient($c, audio=>"@{[BEEPS->{$beep}]}.mp3") if
+			exists BEEPS->{$beep} and
+			exists $wsClients{$lastKeyClient} and
+			$c->{sock} == $lastKeyClient;
+		}
+
+		$c->{ctl} = $data{ctl};
+	    }
+	}
+	else				# data from WebSocket client
+	{
+	    my $close;
+	    my $c = $wsClients{$_};
+	    $_->recv(my $buf, $c->{want});
+
+	    if (length $buf)
+	    {
+		$c->{buf} .= $buf;
+
+		if (!($c->{want} -= length $buf))
+		{
+		    $c->{wsState} eq 'header' && do
+		    {
+			my ($op, $len) = unpack('CC', $buf);
+			my $mask = $len & WS_MASK;
+
+			$op &= 0xf;
+			$len &= 0x7f;
+
+			if ($op == WS_OP_TEXT && $len < 126)
+			{
+			    $c->{want} = $len + ($mask ? 4 : 0);
+			    $c->{wsState} = 'data';
+			}
+			else
+			{
+			    $close = 1;
+			}
+			last;
+		    };
+
+		    $c->{wsState} eq 'data' && do
+		    {
+			my @mask = unpack 'xxC4', $c->{buf};
+			my ($text, $i);
+
+			$text .= chr($_ ^ $mask[$i++ & 3]) for
+			    unpack 'x6C*', $c->{buf};
+
+			$panel->write($keypadType == 6150 ?
+				      pack('C', KEYS->{$text}) :
+				      pack('CC', $keypadAd, KEYS->{$text})) if
+					  exists KEYS->{$text};
+
+			delete $c->{buf};
+			$c->{want} = 2;
+			$c->{wsState} = 'header';
+			$lastKeyTime = time;
+			$lastKeyClient = $c->{sock};
+			last;
+		    };
+		}
+	    }
+	    else
+	    {
+		$close = 1;
+	    }
+
+	    if ($close)
+	    {
+		$sel->remove($c->{sock});
+		$c->{sock}->close;
+		delete $wsClients{$c->{sock}};
+	    }
+	}
+    }
+}
+
+sub digit
+{
+    my ($c, $state, $ad) = @_;
+
+    if ($c->{digitState}{$ad} ne $state)
+    {
+	# turn off the old digit
+	sendClient($c, item=>"${ad}_$c->{digitState}{$ad}", visible=>0) if
+	    exists $c->{digitState}{$ad} and $c->{digitState}{$ad} ne 'off';
+
+	# turn on the new digit
+	sendClient($c, item=>"${ad}_$state", visible=>1) unless $state eq 'off';
+	$c->{digitState}{$ad} = $state;
+    }
+}
+
+sub sendClient
+{
+    my $c = shift;
+    my %data = @_;
+    my $json =
+	'{'.join(', ', map { "\"$_\": \"$data{$_}\"" } sort keys %data).'}';
+
+    $c->{sock}->send(wsWrap($json));
+}
+
+sub wsWrap
+{
+    my $text = shift;
+
+    pack('CC', WS_FIN | WS_OP_TEXT, length($text)).$text;
+}
+
+__DATA__
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Keypad</title>
+</head>
+
+<body>
+  <object id="svg-object" data="KEYPAD_SVG" type="image/svg+xml"></object>
+</body>
+
+<script type="text/javascript">
+  var ws = new WebSocket(WS_URL), down = 0, keypadType = "KEYPAD_TYPE",
+    downTime, svg, specialKeys = ["a", "b", "c", "d", "one_and_asterisk",
+				  "asterisk_and_pound", "three_and_pound"],
+    holdTimer = 0, specialKeysTime = 1000;
+
+  function holdTimeout()
+  {
+      svg.getElementById("hold").style.display = "none";
+      holdTimer = 0;
+  }
+
+  function clearHoldTimeout()
+  {
+      if (holdTimer)
+      {
+	  clearTimeout(holdTimer);
+	  holdTimeout();
+      }
+  }
+
+  function mouseup(b)
+  {
+      if (down)
+      {
+	  clearHoldTimeout();
+	  down.getElementsByTagName("rect")[0].style.fillOpacity = 0;
+
+	  if (down == b)
+	  {
+	      if (specialKeys.includes(down.id))
+	      {
+		  // special keys need to be held for a while
+		  if (Date.now() - downTime >= specialKeysTime)
+		  {
+		      ws.send(down.id);
+		  }
+	      }
+	      else
+	      {
+		  ws.send(down.id);
+	      }
+	  }
+
+	  down = 0;
+      }
+  }
+
+  function mousedown(b)
+  {
+      if (!down)
+      {
+	  if (specialKeys.includes(b.id))
+	  {
+	      svg.getElementById("hold").style.display = "inline";
+	      holdTimer = setTimeout(holdTimeout, specialKeysTime);
+	  }
+
+	  b.getElementsByTagName("rect")[0].style.fillOpacity = 1;
+	  down = b;
+	  downTime = Date.now();
+      }
+  }
+
+  // workaround for out of order mouseout and mouseup events
+  function mouseoutTimeout()
+  {
+      if (down)
+      {
+	  clearHoldTimeout();
+	  down.getElementsByTagName("rect")[0].style.fillOpacity = 0;
+	  down = 0;
+      }
+  }
+
+  function mouseout(b)
+  {
+      if (down == b)
+      {
+	  setTimeout(mouseoutTimeout, 100);
+      }
+  }
+
+  window.addEventListener("load", function()
+  {
+      var svgObject = document.getElementById("svg-object").contentDocument, id;
+
+      svg = svgObject.getElementById("keypad");
+
+      svg.style.userSelect = "none";	// nothing is selectable
+
+      if (keypadType == "6150")
+      {
+	  // hide all the display elements
+          for (const x of
+	       [ ...svg.getElementById("indicators").querySelectorAll("text"),
+		 ...svg.getElementById("digits").querySelectorAll("path") ])
+	  {
+	      x.style.display = "none";
+	  }
+
+	  // AC indicator is always on
+	  svg.getElementById("ac").style.display = "inline";
+      }
+
+      // turn off hold indicator
+      svg.getElementById("hold").style.display = "none";
+
+      // turn off leds
+      svg.getElementById("ready_led").style.fill = "#808080";
+      svg.getElementById("armed_led").style.fill = "#808080";
+
+      // bind mouse events to the buttons
+      for (id of ["zero", "one", "two", "three", "four", "five", "six",
+		  "seven", "eight", "nine", "a", "b", "c", "d",
+		  "asterisk", "pound",
+		  "one_and_asterisk", "asterisk_and_pound", "three_and_pound"])
+      {
+	  var b = svg.getElementById(id);
+
+	  b.style.cursor = "pointer";
+
+	  b.addEventListener("mouseup", mouseup.bind(null, b));
+	  b.addEventListener("mousedown", mousedown.bind(null, b));
+	  b.addEventListener("mouseout", mouseout.bind(null, b));
+
+	  b.addEventListener("touchstart", mousedown.bind(null, b));
+	  b.addEventListener("touchmove", mouseout.bind(null, b));
+      }
+
+      var audio = new Audio, audioSrc;
+
+      ws.onmessage = function(event)
+      {
+	  const data = JSON.parse(event.data);
+
+	  if (typeof data.audio !== "undefined")
+	  {
+	      if (data.audio == "stop")
+	      {
+		  audio.pause();
+	      }
+	      else
+	      {
+		  audioSrc = data.audio;
+		  audio.src = data.audio;
+		  audio.loop = data.loop;
+		  audio.play();
+	      }
+	  }
+	  else if (/_led$/.test(data.item))
+	  {
+	      svg.getElementById(data.item).style.fill = data.color;
+	  }
+	  else if (keypadType == "6150")
+	  {
+	      svg.getElementById(data.item).style.display =
+		  data.visible == 1 ? "inline" : "none";
+	  }
+	  else	// keypadType == "6160")
+	  {
+	      if (data.item == "backlightOn")
+	      {
+		  svg.getElementById("display_background").style.display =
+		      "none";
+		  svg.getElementById("display_background_lit").style.display =
+		      "inline";
+	      }
+	      else if (data.item == "backlightOff")
+	      {
+		  svg.getElementById("display_background").style.display =
+		      "inline";
+		  svg.getElementById("display_background_lit").style.display =
+		      "none";
+	      }
+	      else
+	      {
+		  svg.getElementById(data.item).textContent = data.text;
+	      }
+	  }
+      }
+
+      function mute_unmute(from, to, muted)
+      {
+	  from.style.display = "none";
+	  to.style.display = "inline";
+	  audio.muted = muted;
+      }
+
+      var mute = svg.getElementById("mute"),
+	  unmute = svg.getElementById("unmute");
+
+      mute.style.display = "none";      // hide mute icon
+      mute.style.cursor = "pointer";
+      unmute.style.cursor = "pointer";
+
+      mute.addEventListener("mouseup",
+			    mute_unmute.bind(null, mute, unmute, false));
+      unmute.addEventListener("mouseup",
+			      mute_unmute.bind(null, unmute, mute, true));
+  });
+</script>
+
+</html>

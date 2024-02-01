@@ -1,0 +1,8 @@
+[Unit]
+Description=Ademco Daemon
+
+[Service]
+ExecStart=/usr/local/bin/ademcod 1701
+
+[Install]
+WantedBy=multi-user.target
