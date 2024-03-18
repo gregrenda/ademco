@@ -254,26 +254,28 @@ thread(void *data)
 		// frame start
 		ktime_ms_delta(ktime_get(), start) > FRAME_START_PULSE_MS)
 	    {
-		uint8_t buf[] = { 0xff, 0xff,
-				  CIRC_CNT(keyCirc.head, keyCirc.tail,
-					   sizeof(keyBuf)) ?
-				  ~(1 << (address - 16)) :
-				  0xff }, *p = buf;
-		uint32_t i = sizeof(buf);
-
-		serdev_device_set_parity(serdev, SERDEV_PARITY_NONE);
 		startOfFrame = true;
 #ifdef SOFT_UART
 		uartStartOfFrame = true;
 #endif // SOFT_UART
 
-		// send query response data bytes after the falling edge of
-		// the sync pulses
-		do
+		// see if there's anything to send
+		if (CIRC_CNT(keyCirc.head, keyCirc.tail, sizeof(keyBuf)))
 		{
-		    edge = 1;
-		    serdev_device_write_buf(serdev, p++, 1);
-		} while (--i && !wait_event_interruptible(wqEdge, !edge));
+		    uint8_t buf[] = { 0xff, 0xff, ~(1 << (address - 16)) },
+			*p = buf;
+		    uint32_t i = sizeof(buf);
+
+		    serdev_device_set_parity(serdev, SERDEV_PARITY_NONE);
+
+		    // send query response data bytes after the falling edge of
+		    // the sync pulses
+		    do
+		    {
+			edge = 1;
+			serdev_device_write_buf(serdev, p++, 1);
+		    } while (--i && !wait_event_interruptible(wqEdge, !edge));
+		}
 	    }
 	}
     }
