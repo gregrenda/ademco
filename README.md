@@ -149,7 +149,7 @@ printf "\xf7\x00\x00\xff\x10\x00\x02\x10\x00\x00\x00\x00\x68\x65\x6c\x6c\x6f\x20
 
 The ECP panel interface is implemented as a kernel driver module.
 
-Compilation:
+##### Compilation
 
 By default, the capability to receive device messages via the optional
 optocoupler is enabled on GPIO 17.  To disable this capability or change
@@ -160,7 +160,8 @@ make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
 dtc -@ -I dts -O dtb -o ademco_panel.dtbo ademco_panel.dts
 ```
 
-Installation:
+##### Installation
+
 - The following steps need to be done as `root`:
   - `raspi-config`
     - under `Interface Options->Serial Port`
@@ -173,6 +174,8 @@ Installation:
   - `depmod`
   - add `ademco` to `/etc/modules` to load the module at boot
   - `reboot`
+
+##### Daemon
 
 `ademcod` listens on the specified UDP port for key press messages to send
 to the panel. A key press message consists of the keypad address followed
@@ -656,7 +659,9 @@ interrupts to read the serial data.  If enabled, `/dev/ademco_devices` is
 created.  The read data is a raw byte stream of data received from the
 devices.  This includes any keypad key data sent via `/dev/ademco_panel`.
 
-`ademcod` provides a UDP interface to the devices.
+`ademcod` provides a UDP interface to the devices.  See the
+[description](#daemon) above.
+
 
 ## License
 
