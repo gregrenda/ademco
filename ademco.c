@@ -22,24 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <linux/init.h>
-#include <linux/module.h>
-#include <linux/kernel.h>
 #include <linux/cdev.h>
-#include <linux/fs.h>
 #include <linux/serdev.h>
 #include <linux/of_device.h>
 #include <linux/kthread.h>
-#include <linux/delay.h>
 #include <linux/gpio/consumer.h>
 #include <linux/interrupt.h>
-#include <linux/wait.h>
-#include <linux/jiffies.h>
 #include <linux/circ_buf.h>
 #include <linux/poll.h>
 
 //#define DEBUG
 //#define SOFT_UART		17		// rx GPIO
+
+//#define USE_DEBUGFS
 
 #define NAME			"ademco_panel"
 #define FRAME_START_PULSE_MS	10
@@ -59,6 +54,13 @@ static bool uartStartOfFrame;
 static uint8_t keyBuf[32],	// size must be a power of 2
     outBuf[256];		// size must be a power of 2
 static struct circ_buf outCirc = { .buf = outBuf }, keyCirc = { .buf = keyBuf };
+
+#ifdef USE_DEBUGFS
+#include <linux/debugfs.h>
+
+static struct dentry *debugfsDir;
+static uint32_t transmitQueueDepth;
+#endif // USE_DEBUGFS
 
 DECLARE_WAIT_QUEUE_HEAD(wqEdge);
 DECLARE_WAIT_QUEUE_HEAD(wqData);
@@ -206,6 +208,10 @@ ademco_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)
 
 	keyCirc.head = (keyCirc.head + n) & (sizeof(keyBuf) - 1);
 	seq += 0x40;		// increment sequence number
+
+#ifdef USE_DEBUGFS
+	transmitQueueDepth++;
+#endif // USE_DEBUGFS
     }
 
     return len;
@@ -376,9 +382,15 @@ serdev_recv(struct serdev_device *serdev, const unsigned char *buffer,
 	    uint32_t len = CIRC_CNT(keyCirc.head, keyCirc.tail, sizeof(keyBuf));
 
 	    if (len && *buf == keyCirc.buf[keyCirc.tail])
+	    {
 		keyCirc.tail = (keyCirc.tail +
 				keyCirc.buf[keyCirc.tail + 1] + 2) &
 		    (sizeof(keyBuf) - 1);
+
+#ifdef USE_DEBUGFS
+		transmitQueueDepth--;
+#endif // USE_DEBUGFS
+	    }
 
 	    ackAddress = 0;
 	    used = 2;
@@ -756,6 +768,14 @@ soft_uart_init(void)
 static int __init
 ademco_init(void)
 {
+#ifdef USE_DEBUGFS
+    if (!(debugfsDir = debugfs_create_dir("ademco", 0)))
+	ERROR("Can't create debugfs directory");
+
+    debugfs_create_u32("transmitQueueDepth", 0444, debugfsDir,
+		       &transmitQueueDepth);
+#endif // USE_DEBUGFS
+
     if (serdev_device_driver_register(&ademco_driver))
 	ERROR("Could not load driver");
 
@@ -781,6 +801,10 @@ ademco_exit(void)
     cdev_del(&uart_cdev);
     unregister_chrdev_region(uart_dev, 1);
 #endif // SOFT_UART
+
+#ifdef USE_DEBUGFS
+    debugfs_remove_recursive(debugfsDir);
+#endif // USE_DEBUGFS
 }
 
 module_init(ademco_init);
