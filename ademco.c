@@ -49,7 +49,7 @@ static int edge;
 static uint32_t address;
 static bool startOfFrame;
 #ifdef SOFT_UART
-static bool uartStartOfFrame;
+static long uartStartOfFrame;
 #endif // SOFT_UART
 static uint8_t keyBuf[32],	// size must be a power of 2
     outBuf[256];		// size must be a power of 2
@@ -262,7 +262,7 @@ thread(void *data)
 	    {
 		startOfFrame = true;
 #ifdef SOFT_UART
-		uartStartOfFrame = true;
+		uartStartOfFrame = jiffies;
 #endif // SOFT_UART
 
 		// see if there's anything to send
@@ -558,7 +558,7 @@ static struct class *uart_class;
 static int uart_irq_num;
 static ktime_t uart_last_irq;
 static struct hrtimer uart_timer;
-static uint32_t uart_rx, uart_open_count, uart_bit_count, drop;
+static uint32_t uart_rx, uart_open_count, uart_bit_count;
 static uart_state_t uart_state;
 
 static uint8_t uartOutBuf[256];		// size must be a power of 2
@@ -615,21 +615,18 @@ uart_irq_handler(int irq, void *data)
     {
 	case UART_SYNC:
 	{
-	    if (!uartStartOfFrame)
+	    if (!uartStartOfFrame ||
+		// skip past the device status query
+		jiffies_to_msecs((long) jiffies - uartStartOfFrame) < 10)
 		break;
 
 	    uart_state = UART_DATA;
+	    uartStartOfFrame = 0;
 	}
 	// fall through
 	case UART_DATA:
 	    if (!uart_bit_count)
 	    {
-		if (uartStartOfFrame)
-		{
-		    drop = 3;	// drop the 3 query response bytes
-		    uartStartOfFrame = false;
-		}
-
 		uart_bit_count = 9;
 		uart_rx = 0;
 		hrtimer_start(&uart_timer, ktime_set(0, BIT_RATE / 2 + BIT_RATE),
@@ -652,23 +649,18 @@ uart_timer_handler(struct hrtimer *timer)
 	return HRTIMER_RESTART;
     }
 
-    if (!drop)
-    {
-	// if there's not enough room in the output buffer, overwrite the
-	// oldest data
-	spin_lock(&uartOut_spinlock);
+    // if there's not enough room in the output buffer, overwrite the
+    // oldest data
+    spin_lock(&uartOut_spinlock);
 
-	if (!CIRC_SPACE(uartOutCirc.head, uartOutCirc.tail, sizeof(uartOutBuf)))
-	    uartOutCirc.tail = (uartOutCirc.tail + 1) & (sizeof(uartOutBuf) - 1);
+    if (!CIRC_SPACE(uartOutCirc.head, uartOutCirc.tail, sizeof(uartOutBuf)))
+	uartOutCirc.tail = (uartOutCirc.tail + 1) & (sizeof(uartOutBuf) - 1);
 
-	spin_unlock(&uartOut_spinlock);
+    spin_unlock(&uartOut_spinlock);
 
-	uartOutCirc.buf[uartOutCirc.head] = uart_rx;
-	uartOutCirc.head = (uartOutCirc.head + 1) & (sizeof(uartOutBuf) - 1);
-	wake_up_interruptible(&wqUartData);
-    }
-    else
-	drop--;
+    uartOutCirc.buf[uartOutCirc.head] = uart_rx;
+    uartOutCirc.head = (uartOutCirc.head + 1) & (sizeof(uartOutBuf) - 1);
+    wake_up_interruptible(&wqUartData);
 
     return HRTIMER_NORESTART;
 }
