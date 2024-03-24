@@ -206,6 +206,12 @@ printf "\x10\x01\x02\x03\x04\x02" | socat -u - udp-sendto:localhost:1701,sourcep
 
 Edit `ademcod.service` to change the UDP port number.
 
+##### MQTT Daemon
+
+`alarmmqtt` provides an [MQTT](https://mqtt.org) interface to the panel.
+See the source code for the supported topics.  `alarmmqtt` requires the
+[Net::MQTT::Simple](https://metacpan.org/pod/Net::MQTT::Simple) Perl module.
+
 ## Keypad GUI
 
 The `keypad` application provides a web-based UI for the keypad.  It

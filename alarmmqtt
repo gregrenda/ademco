@@ -1,0 +1,211 @@
+#!/usr/bin/perl -- # -*-Perl-*-
+
+# MIT License
+#
+# Copyright (c) 2024 Greg Renda
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+# Usage: alarmqtt <keypad id (16-23)> <mqtt broker host> <ademcod host:port>
+#
+# Subscribed topics:
+#    alarm/keypress
+#       one or more single character keys - 0123456789*#
+#       or a single special key string:
+#           - 1+*
+#           - *+#
+#           - 3+#
+#           - function a
+#           - function b
+#           - function c
+#           - function d
+#
+# Published topics:
+#     alarm/message			keypad message
+#
+#     alarm/status/backlight		lcd backlight state
+#     alarm/status/armed_stay		armed in stay mode
+#     alarm/status/armed_away		armed in away mode
+#     alarm/status/canceled		alarm canceled
+#     alarm/status/occurred		alarm occurred
+#     alarm/status/sounding		alarm is sounding
+#     alarm/status/ready		ready to be armed
+#     alarm/status/low_battery		low battery
+#     alarm/status/system_issue		system issue
+#     alarm/status/fire			fire alarm
+#     alarm/status/ac_power		ac power present
+#
+#     alarm/zone/<zone number>		zone status (fault, closed)
+#
+#     alarm/rf/<rf id>			rf zone status
+#         JSON representation of rf
+#         state bits:
+#             rf_loop_1
+#             rf_loop_2
+#             rf_loop_3
+#             rf_loop_4
+#             rf_low_battery
+#             rf_supervision_required
+#             rf_unknown0
+#             rf_unknown3
+
+use strict;
+use Net::MQTT::Simple;
+use IO::Socket;
+use IO::Select;
+
+use constant RF		=> qw(unknown0 low_battery supervision_required
+			      unknown3 loop_3 loop_2 loop_4 loop_1);
+use constant STATES	=> { alarm=>1, away=>2, ac_power=>3, bypass=>4, chime=>5,
+			     instant=>7, system_issue=>9, ready=>12, fire=>13,
+			     low_battery=>14, stay=>15, night=>20,
+			     canceled=>21 };
+use constant STATUS	=> qw(backlight armed_stay armed_away canceled occurred
+			      sounding ready low_battery system_issue fire
+			      ac_power);
+use constant TOPIC	=> 'alarm';
+
+my ($keypadId, $broker, $alarmHost) = @ARGV;
+die "usage: $0 <keypad id> <broker host> <alarm host:port>\n" unless
+    $keypadId and $broker and $alarmHost;
+
+my $mqtt = new Net::MQTT::Simple $broker or die "$0: Can't connect to broker.\n";
+
+$mqtt->subscribe(TOPIC.'/keypress'=>\&keypress);
+
+my (%zones, $expire, $lastKeepAlive, %status);
+
+my $alarm = new IO::Socket::INET PeerAddr=>$alarmHost, Proto=>'udp' or die;
+my $sel = new IO::Select $alarm;
+
+while (1)
+{
+    my $now = time;
+
+    if ($now - $lastKeepAlive >= 10)	# send keep alives
+    {
+	$alarm->send(chr(0xff));
+	$lastKeepAlive = $now;
+    }
+
+    if ($sel->can_read(2))
+    {
+	$alarm->recv(my $buf, 1024);
+	next unless $buf;
+
+	# keypad message
+	if (length $buf eq 46 and unpack('n', $buf) == 0xf7)
+	{
+	    my %data;
+
+	    @data{qw(state msg)} = unpack 'x6Nx3A32', $buf;
+
+	    if ((my $first = unpack('C', $data{msg})) & 0x80)
+	    {
+		$status{backlight} = 1;
+		substr($data{msg}, 0, 1) = pack 'C', ($first & 0x7f);
+	    }
+
+	    $mqtt->publish(TOPIC.'/message', $data{msg});
+
+	    # look for zone number in message
+	    if ($data{msg} =~ /^(\S+)\s+(\d+)\s+/)
+	    {
+		my ($type, $zone) = (lc $1, $2);
+		$zone =~ s/^0+//; # strip leading zeros
+		$mqtt->publish(TOPIC."/zone/$zone", $type);
+		@{$zones{$zone}}{qw(time type)} = (time, $type);
+	    }
+
+	    $_ = $data{msg};
+	    $status{armed_stay} = 1 if /armed.+stay/i;
+	    $status{armed_away} = 1 if /armed.+away/i;
+	    $status{fire} = 1 if /fire\s+\d+/i;
+	    @status{qw(canceled sounding armed_stay armed_away)} = 1 if
+		/canceled/i;
+	    @status{qw(sounding occurred)} = (1, 1) if
+		/alarm\s+\d+/i and !$status{canceled};
+	    @status{qw(armed_stay armed_away occurred sounding canceled fire)} =
+		() if /disarmed/i;
+
+	    $status{$_} = $data{state} & (1 << STATES->{$_}) for
+		qw{ready low_battery system_issue ac_power};
+
+	    $mqtt->publish(TOPIC."/status/$_", $status{$_} ? 'ON' : 'OFF') for
+		sort (STATUS());
+	}
+	# RF message
+	elsif (length $buf eq 7 and (unpack('n', $buf) & 0xfff0) == 0x0150)
+	{
+	    my ($id, $data) = unpack 'xNC', $buf;
+	    $id &= 0x000fffff;
+
+	    my (%rf, $i);
+
+	    for (my $i = 0; $i < 8; $i++)
+	    {
+		$rf{(RF)[$i]} = ($data & (1 << $i)) ? 'true' : 'false';
+	    }
+
+	    my $json = join ', ', map {qq("rf_$_": $rf{$_})} sort keys %rf;
+	    $mqtt->publish(TOPIC."/rf/$id", "{ $json }");
+	}
+
+	for (sort keys %zones)
+	{
+	    if ($now - $zones{$_}{time} >= 90 or
+		($status{ready} and $zones{$_}{type} eq 'fault'))
+	    {
+		$mqtt->publish(TOPIC."/zone/$_", 'closed');
+		delete $zones{$_};
+	    }
+	}
+    }
+
+    $mqtt->tick(0);
+}
+
+use constant KEYS => { 0=>0, 1=>1, 2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7,
+		       8=>8, 9=>9, '*'=>0xa, '#'=>0xb,
+		       '1+*'=>0xc, '*+#'=>0xd, '3+#'=>0xe,
+		       'function a'=>0x1c, 'function b'=>0x1d,
+		       'function c'=>0x1e, 'function d'=>0x1f };
+
+sub keypress
+{
+    my ($topic, $message) = @_;
+    my $keys;
+
+    $message = lc $message;
+
+    if (exists KEYS->{$message})
+    {
+	$keys = chr(KEYS->{$message});
+    }
+    else
+    {
+	for (split //, $message)
+	{
+	    return unless exists KEYS->{$_};
+	    $keys .= chr(KEYS->{$_});
+	}
+    }
+
+    $alarm->send(chr($keypadId).$keys);
+}
